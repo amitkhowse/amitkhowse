@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Amit Khowse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#0f766e',
+                        brandDark: '#0b5e58',
+                        surface: '#f4efe6',
+                        shadowSoft: '#d8d2c7',
+                    },
+                    borderRadius: { '3xl': '24px' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neumorph { box-shadow: 8px 8px 16px #d8d2c7, -8px -8px 16px #ffffff; }
+        .neumorph-inset { box-shadow: inset 6px 6px 12px #d8d2c7, inset -6px -6px 12px #ffffff; }
+        .filter-btn.active { background-color: #0f766e; color: white; box-shadow: inset 4px 4px 8px #0b5e58; }
+    </style>
+</head>
+<body class="bg-surface text-slate-800 antialiased">
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="neumorph px-5 py-2 md:px-6 md:py-3 rounded-3xl font-bold text-brand text-sm md:text-base transition-transform active:scale-95">
+            Amit
+        </a>
+        
+        <nav class="hidden md:flex gap-4">
+            <a href="index.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">Home</a>
+            <a href="about.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">About</a>
+            <a href="services.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">Services</a>
+            <a href="projects.html" class="neumorph px-5 py-2 rounded-3xl text-brand bg-white font-bold transition-all border border-brand/10">Projects</a>
+            <a href="contact.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3 md:gap-4">
+            <button class="hidden sm:block bg-brand text-white px-5 py-2 md:px-6 md:py-3 rounded-3xl font-semibold shadow-lg hover:bg-brandDark transition-all active:scale-95">
+                Hire Me
+            </button>
+            <button id="menuToggle" class="md:hidden neumorph w-10 h-10 flex items-center justify-center rounded-xl text-brand text-xl">
+                ☰
+            </button>
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden fixed inset-x-6 top-24 p-6 rounded-3xl bg-surface neumorph z-[60] flex flex-col gap-4 text-center border border-white/20">
+        <a href="index.html" class="py-3 neumorph-inset rounded-2xl font-bold text-brand">Home</a>
+        <a href="about.html" class="py-3 font-bold">About</a>
+        <a href="services.html" class="py-3 font-bold">Services</a>
+        <a href="projects.html" class="py-3 neumorph rounded-2xl text-brand font-bold bg-white">Projects</a>
+        <a href="contact.html" class="py-3 font-bold">Contact</a>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-12">
+    <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Our <span class="text-brand">Works</span></h1>
+        <p class="text-slate-500">Showcasing our recent high-performance projects delivered in Bhopal and beyond.</p>
+    </div>
+
+    <!-- Updated Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="filter-btn active neumorph px-6 py-2 rounded-2xl font-bold transition-all" data-category="all">All Works</button>
+        <button class="filter-btn neumorph px-6 py-2 rounded-2xl font-bold text-slate-600 transition-all" data-category="React Apps">React & Vite</button>
+        <button class="filter-btn neumorph px-6 py-2 rounded-2xl font-bold text-slate-600 transition-all" data-category="E-Commerce">E-Commerce</button>
+        <button class="filter-btn neumorph px-6 py-2 rounded-2xl font-bold text-slate-600 transition-all" data-category="WordPress">WordPress Blogs</button>
+    </div>
+
+    <div id="projectGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Projects will be injected here via JS -->
+    </div>
+</main>
+
+<footer class="bg-surface pt-20 pb-10 border-t border-white/20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="lg:col-span-2 reveal">
+                <a href="index.html" class="neumorph px-6 py-3 rounded-3xl font-bold text-brand inline-block mb-6 text-xl">Amit.dev</a>
+                <p class="text-slate-500 max-w-sm leading-relaxed mb-8">Crafting high-performance digital solutions in Bhopal. Let's build the future together.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/amit-khowse/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">Li</a>
+                    <a href="https://github.com/amitkhowse" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">Gh</a>
+                    <a href="https://www.facebook.com/amitkhowse/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">Fb</a>
+                    <a href="https://x.com/AmitKhowse" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">X</a>
+                </div>
+            </div>
+            <div class="reveal">
+                <h4 class="text-brand font-bold uppercase tracking-widest text-xs mb-6">Links</h4>
+                <ul class="space-y-4 text-sm font-medium text-slate-600">
+                    <li><a href="index.html" class="hover:text-brand">Home</a></li>
+                    <li><a href="about.html" class="hover:text-brand">About</a></li>
+                    <li><a href="services.html" class="hover:text-brand">Services</a></li>
+                    <li><a href="projects.html" class="hover:text-brand">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <h4 class="text-brand font-bold uppercase tracking-widest text-xs mb-6">Contact</h4>
+                <div class="neumorph-inset p-6 rounded-3xl space-y-2 text-sm">
+                    <p>📍 Bhopal, India</p>
+                    <p class="font-bold text-brand">Amitkhowse2000@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-shadowSoft flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-xs">
+            <p>&copy; 2026 Amit.dev. Built with ❤️ and Code.</p>
+            <button id="backToTop" class="w-12 h-12 flex items-center justify-center rounded-full neumorph text-brand opacity-30 hover:opacity-100 transition-all">↑</button>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 1. Data Object (Updated with provided user links and details)
+    const projects = [
+        { 
+            id: 1, 
+            title: "Shubh X Sun Solar", 
+            cat: "React Apps", 
+            tech: "React, Vite, Tailwind, TS", 
+            link: "https://shubhxsunsolar.com/",
+            img: "../assets/projects/shubhxsunsolar.png" 
+        },
+        { 
+            id: 2, 
+            title: "Adwik India", 
+            cat: "React Apps", 
+            tech: "React, Vite, Tailwind, TS", 
+            link: "https://adwikindia.com/",
+            img: "../assets/projects/adwikindia.png" 
+        },
+        { 
+            id: 3, 
+            title: "Bhopal AgTech", 
+            cat: "E-Commerce", 
+            tech: "WordPress, WooCommerce", 
+            link: "https://bhopalagtech.com/",
+            img: "../assets/projects/bhopalagtech.png" 
+        },
+        { 
+            id: 4, 
+            title: "Chill Comfort Pvt Ltd", 
+            cat: "E-Commerce", 
+            tech: "WordPress, WooCommerce", 
+            link: "https://chillcomfortpvtltd.com/",
+            img: "../assets/projects/chillcomfortpvtltd.png" 
+        },
+        { 
+            id: 5, 
+            title: "Ophthalmology Fellowship", 
+            cat: "WordPress", 
+            tech: "WordPress, Review Blog", 
+            link: "https://ophthalmologyfellowship.com/",
+            img: "../assets/projects/ophthalmologyfellowship.png" 
+        },
+        { 
+            id: 6, 
+            title: "Chitransh Agency", 
+            cat: "React Apps", 
+            tech: "React, Vite, Tailwind", 
+            link: "https://chitranshagency.in/",
+            img: "../assets/projects/chitranshagency.png" 
+        }
+    ];
+
+    const grid = document.getElementById('projectGrid');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // 2. Render Function (Updated to support Live Links and Tech Stack)
+    function renderProjects(category = 'all') {
+        const filtered = category === 'all' ? projects : projects.filter(p => p.cat === category);
+        
+        grid.innerHTML = filtered.map(p => `
+            <div class="project-item reveal group">
+                <div class="neumorph p-4 rounded-[2.5rem] overflow-hidden transition-transform duration-500 hover:-translate-y-3">
+                    <a href="${p.link}" target="_blank" class="relative overflow-hidden rounded-[2rem] aspect-video mb-6 block">
+                        <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </a>
+                    <div class="px-4 pb-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-brand text-[10px] font-bold uppercase tracking-widest block">${p.cat}</span>
+                            <span class="text-slate-500 text-[10px] font-medium bg-white/50 px-2 py-1 rounded-lg">${p.tech}</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">${p.title}</h3>
+                        <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-block w-full py-3 text-center neumorph-inset rounded-2xl text-sm font-bold text-brand hover:text-white hover:bg-brand transition-all">
+                            Visit Live Site →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        gsap.from(".project-item", { opacity: 0, y: 30, duration: 0.6, stagger: 0.1 });
+    }
+
+    // 3. Filter Interaction
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active', 'bg-brand', 'text-white'));
+            btn.classList.add('active');
+            renderProjects(btn.dataset.category);
+        });
+    });
+
+    // 4. Mobile Menu & Scroll
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    window.addEventListener('scroll', () => {
+        document.getElementById('backToTop').style.opacity = window.scrollY > 400 ? "1" : "0.3";
+    });
+
+    document.getElementById('backToTop').addEventListener('click', () => {
+        gsap.to(window, { duration: 1, scrollTo: 0, ease: "power3.inOut" });
+    });
+
+    window.onload = () => renderProjects('all');
+</script>
+</body>
+</html>

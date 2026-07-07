@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Details | Amit.dev</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#0f766e',
+                        brandDark: '#0b5e58',
+                        surface: '#f4efe6',
+                        shadowSoft: '#d8d2c7',
+                    },
+                    borderRadius: {
+                        '3xl': '24px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neumorph { box-shadow: 10px 10px 20px #d8d2c7, -10px -10px 20px #ffffff; }
+        .neumorph-inset { box-shadow: inset 6px 6px 12px #d8d2c7, inset -6px -6px 12px #ffffff; }
+    </style>
+</head>
+<body class="bg-surface text-slate-800 overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="neumorph px-5 py-2 md:px-6 md:py-3 rounded-3xl font-bold text-brand text-sm md:text-base transition-transform active:scale-95">
+            Amit
+        </a>
+        
+        <nav class="hidden md:flex gap-4">
+            <a href="index.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">Home</a>
+            <a href="about.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">About</a>
+            <a href="services.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">Services</a>
+            <a href="projects.html" class="neumorph px-5 py-2 rounded-3xl text-brand bg-white font-bold transition-all border border-brand/10">Projects</a>
+            <a href="contact.html" class="neumorph px-5 py-2 rounded-3xl hover:text-brand font-bold transition-all">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3 md:gap-4">
+            <button id="hireBtn" class="hidden sm:block bg-brand text-white px-5 py-2 md:px-6 md:py-3 rounded-3xl font-semibold shadow-lg hover:bg-brandDark transition-all active:scale-95">
+                Hire Me
+            </button>
+            <button id="menuToggle" class="md:hidden neumorph w-10 h-10 flex items-center justify-center rounded-xl text-brand text-xl">
+                ☰
+            </button>
+        </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden fixed inset-x-6 top-24 p-6 rounded-3xl bg-surface neumorph z-[60] flex flex-col gap-4 text-center border border-white/20">
+        <a href="index.html" class="py-3 neumorph-inset rounded-2xl font-bold text-brand">Home</a>
+        <a href="about.html" class="py-3 neumorph rounded-2xl text-brand font-bold bg-white">About</a>
+        <a href="services.html" class="py-3 neumorph-inset rounded-2xl font-bold text-brand">Services</a>
+        <a href="projects.html" class="py-3 neumorph-inset rounded-2xl font-bold text-brand">Projects</a>
+        <a href="contact.html" class="py-3 neumorph-inset rounded-2xl font-bold text-brand">Contact</a>
+    </div>
+</header>
+
+    <div class="container mt-20 mx-auto max-w-5xl">
+        <a href="projects.html" class="neumorph px-8 py-3 rounded-2xl inline-block mb-12 font-bold text-brand">← Back to Gallery</a>
+        
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="neumorph p-4 rounded-[3rem]">
+                <img id="proj-img" src="" class="w-full rounded-[2.5rem] shadow-lg" alt="Project Large">
+            </div>
+
+            <div>
+                <h1 id="proj-title" class="text-4xl md:text-6xl font-bold mb-4 text-slate-900"></h1>
+                <p id="proj-cat" class="text-brand font-bold uppercase tracking-widest mb-8"></p>
+                
+                <div class="neumorph-inset p-8 rounded-[2rem] mb-10">
+                    <h3 class="font-bold text-xl mb-4">Project Overview</h3>
+                    <p id="proj-desc" class="text-slate-600 leading-relaxed"></p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="neumorph p-4 rounded-2xl text-center">
+                        <span class="block text-brand font-bold">Tech Stack</span>
+                        <span class="text-sm">React & GSAP</span>
+                    </div>
+                    <div class="neumorph p-4 rounded-2xl text-center">
+                        <span class="block text-brand font-bold">Timeline</span>
+                        <span class="text-sm">4 Weeks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <footer class="bg-surface pt-20 pb-10 border-t border-white/20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="lg:col-span-2 reveal">
+                <a href="index.html" class="neumorph px-6 py-3 rounded-3xl font-bold text-brand inline-block mb-6 text-xl">Amit.dev</a>
+                <p class="text-slate-500 max-w-sm leading-relaxed mb-8">Crafting high-performance digital solutions in Bhopal. Let's build the future together.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/amit-khowse/" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">Li</a>
+                    <a href="https://github.com/amitkhowse" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">Gh</a>
+                    <a href="https://www.facebook.com/amitkhowse/" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">Fb</a>
+                    <a href="https://x.com/AmitKhowse" class="w-12 h-12 flex items-center justify-center rounded-2xl neumorph text-brand hover:bg-white transition-all">X</a>
+                </div>
+            </div>
+            <div class="reveal">
+                <h4 class="text-brand font-bold uppercase tracking-widest text-xs mb-6">Links</h4>
+                <ul class="space-y-4 text-sm font-medium text-slate-600">
+                    <li><a href="index.html" class="hover:text-brand">Home</a></li>
+                    <li><a href="about.html" class="hover:text-brand">About</a></li>
+                    <li><a href="services.html" class="hover:text-brand">Services</a></li>
+                    <li><a href="projects.html" class="hover:text-brand">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <h4 class="text-brand font-bold uppercase tracking-widest text-xs mb-6">Contact</h4>
+                <div class="neumorph-inset p-6 rounded-3xl space-y-2 text-sm">
+                    <p>📍 Bhopal, India</p>
+                    <p class="font-bold text-brand">Amitkhowse2000@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-shadowSoft flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-xs">
+            <p>&copy; 2026 Amit.dev. Built with ❤️ and Code.</p>
+            <button id="backToTop" class="w-12 h-12 flex items-center justify-center rounded-full neumorph text-brand opacity-30 hover:opacity-100 transition-all">↑</button>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+ 
+<script>
+    const btt = document.getElementById('backToTop');
+    
+    // Show/Hide Back to Top
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btt.style.opacity = "1";
+        } else {
+            btt.style.opacity = "0.3";
+        }
+    });
+
+    // Smooth Scroll to Top
+    btt.addEventListener('click', () => {
+        gsap.to(window, { duration: 1, scrollTo: 0, ease: "power3.inOut" });
+    });
+</script>
+
+
+
+    <script>
+       const projectDatabase = {
+    1: {
+        title: "Purcrave E-Commerce",
+        cat: "E-Commerce",
+        desc: "A full-scale online marketplace built for high-volume sales with integrated inventory management, advanced filtering system, and Bhopal-local payment gateway support.",
+        img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800"
+    },
+
+    2: {
+        title: "Tathastu Homeopathic Clinic",
+        cat: "Healthcare App",
+        desc: "A secure patient management dashboard allowing appointment booking, digital prescriptions, and encrypted medical record storage using a custom React frontend.",
+        img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800"
+    },
+
+    3: {
+        title: "Solar Solutions Bhopal",
+        cat: "Business Website",
+        desc: "A lead-generation optimized solar company website with EMI calculator integration and Google Ads landing page structure.",
+        img: "https://images.unsplash.com/photo-1509391366360-fe5bb6521e2c?w=800"
+    },
+
+    4: {
+        title: "Chitransh Water Agency",
+        cat: "Service Website",
+        desc: "A service-based website focused on bulk water supply bookings with WhatsApp API integration and real-time inquiry forms.",
+        img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+    },
+
+    5: {
+        title: "Fitness Equipment Store",
+        cat: "E-Commerce",
+        desc: "An online fitness equipment store with Razorpay integration, COD options, product comparison tools, and performance-optimized checkout.",
+        img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"
+    },
+
+    6: {
+        title: "Royal City Real Estate",
+        cat: "Real Estate",
+        desc: "A property listing portal featuring interactive maps, property filters, brochure downloads, and automated lead capture funnels.",
+        img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800"
+    },
+
+    7: {
+        title: "Shubh X Sun Solar",
+        cat: "Business Website",
+        desc: "A high-conversion solar landing page with subsidy awareness section, EMI breakdown module, and Meta Ads integrated tracking.",
+        img: "https://images.unsplash.com/photo-1509391366360-fe5bb6521e2c?w=800"
+    },
+
+    8: {
+        title: "MSF Cardio Equipment",
+        cat: "E-Commerce",
+        desc: "A B2B and B2C fitness machinery platform with bulk pricing logic, distributor dashboard, and automated GST invoice system.",
+        img: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=800"
+    },
+
+    9: {
+        title: "CoolCare Repair Services",
+        cat: "Service Platform",
+        desc: "An AC & cooler servicing booking platform with slot scheduling, technician assignment system, and WhatsApp notification automation.",
+        img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800"
+    },
+
+    10: {
+        title: "Shubh Yatra Travels",
+        cat: "Travel Web App",
+        desc: "A tour and travel booking platform with vehicle selection, package filtering, customer review integration, and instant inquiry system.",
+        img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800"
+    },
+
+    11: {
+        title: "AimTech Solar Pvt Ltd",
+        cat: "Corporate Website",
+        desc: "A professional corporate solar website featuring industrial projects showcase, performance stats, and investor-ready presentation layout.",
+        img: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800"
+    },
+
+    12: {
+        title: "AdGrow Digital",
+        cat: "Agency Website",
+        desc: "A modern digital agency website built with SEO-first structure, animated case studies, and lead magnet funnel integration.",
+        img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800"
+    },
+
+    13: {
+        title: "Healthy Life Pharmacy",
+        cat: "E-Commerce",
+        desc: "An online pharmacy store with prescription upload system, medicine categorization, and subscription-based refill automation.",
+        img: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800"
+    },
+
+    14: {
+        title: "Urban Interior Studio",
+        cat: "Business Website",
+        desc: "A portfolio-style interior design website with project galleries, inquiry forms, and dynamic testimonial sliders.",
+        img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800"
+    },
+
+    15: {
+        title: "EduSpark Academy",
+        cat: "Education Platform",
+        desc: "An LMS-based education portal with course modules, student dashboards, quiz system, and secure login authentication.",
+        img: "https://images.unsplash.com/photo-1588072432836-e10032774350?w=800"
+    },
+
+    16: {
+        title: "FreshMart Grocery Store",
+        cat: "E-Commerce",
+        desc: "A hyperlocal grocery delivery platform with location-based delivery slots and recurring order subscription system.",
+        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800"
+    },
+
+    17: {
+        title: "Elite Car Rental",
+        cat: "Service Website",
+        desc: "A premium car rental booking system with vehicle comparison, real-time availability, and automated quotation generator.",
+        img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800"
+    },
+
+    18: {
+        title: "BuildPro Construction",
+        cat: "Corporate Website",
+        desc: "A construction company profile website highlighting completed projects, client testimonials, and inquiry-driven landing pages.",
+        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800"
+    },
+
+    19: {
+        title: "Glow Beauty Salon",
+        cat: "Service Website",
+        desc: "A salon booking website with online appointment scheduling, service packages display, and promotional offer banners.",
+        img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800"
+    },
+
+    20: {
+        title: "TechNova Startup",
+        cat: "Web Application",
+        desc: "A SaaS-style startup platform featuring dashboard analytics, subscription plans, user onboarding flow, and API integrations.",
+        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+    },
+
+    21: {
+        title: "GreenFarm Organics",
+        cat: "E-Commerce",
+        desc: "An organic products e-commerce platform with farm-to-home storytelling, subscription model, and COD integration.",
+        img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800"
+    },
+
+    22: {
+        title: "City Dental Care",
+        cat: "Healthcare Website",
+        desc: "A dental clinic website with appointment booking, treatment pages optimized for local SEO, and Google Reviews integration.",
+        img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800"
+    },
+
+    23: {
+        title: "Smart Coaching Classes",
+        cat: "Education Website",
+        desc: "A coaching institute website with course enrollment forms, results showcase section, and WhatsApp inquiry automation.",
+        img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+    },
+
+    24: {
+        title: "Luxury Furniture Hub",
+        cat: "E-Commerce",
+        desc: "A premium furniture store website with 3D product previews, EMI options, and high-performance checkout optimization.",
+        img: "https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?w=800"
+    }
+};
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const data = projectDatabase[id] || projectDatabase[1]; // Default to project 1
+
+        document.getElementById('proj-title').innerText = data.title;
+        document.getElementById('proj-cat').innerText = data.cat;
+        document.getElementById('proj-desc').innerText = data.desc;
+        document.getElementById('proj-img').src = data.img;
+    </script>
+</body>
+</html>
